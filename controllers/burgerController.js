@@ -7,6 +7,7 @@ var burger = require('../models/burger.js');
 // All Routing
 router.get("/", function (req, res) {
     burger.all(function (data) {
+        console.log('data:', data);
         var hbsObject = {
             burgers: data
         };
@@ -20,7 +21,7 @@ router.post("/api/burgers", function (req, res) {
     burger.create([
         "burger_name", "devoured"
     ], [
-            req.body.name, req.body.sleepy
+            req.body.name, req.body.devoured
         ], function (result) {
             // Send back the ID of the new quote
             res.json({ id: result.insertId });
@@ -46,7 +47,7 @@ router.put("/api/burgers/:id", function (req, res) {
 });
 
 // Delete Request
-router.delete("/api/burgerss/:id", function (req, res) {
+router.delete("/api/burgers/:id", function (req, res) {
     var condition = "id = " + req.params.id;
 
     burger.delete(condition, function (result) {
