@@ -3,7 +3,7 @@ $(function() {
     $(".change-devoured").on("click", function(event) {
       var id = $(this).data("id");
       var newDevoured = $(this).data("newdevoured");
-  
+
       var newDevouredState = {
         devoured: newDevoured
       };
@@ -29,7 +29,7 @@ $(function() {
         burger_name: $("#ca").val().trim(),
         devoured: $("[name=devoured]:checked").val().trim()
       };
-      console.log(newBurger);
+      console.log('newBurger:', newBurger);
   
       // Send the POST request.
       $.ajax("/api/burgers", {
