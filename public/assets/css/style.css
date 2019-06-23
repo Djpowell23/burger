@@ -1,0 +1,15 @@
+body {
+    background-color: rgba(255, 174, 0, 0.664);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.col-md-6 {
+    min-height: 150px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.sub {
+    margin: 5px;
+}
